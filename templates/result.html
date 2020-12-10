@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+.spam{
+background-image: url("{{url_for('static', filename='spam 6.png')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black;
+  text-align: center;
+}
+.notspam{
+background-image: url("{{url_for('static', filename='ok.png')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 200px;
+  background-position: center;
+  color: black;
+  text-align: center;
+}
+</style>
+<head>
+	<title>Result</title>
+    
+</head>
+<body>
+
+	
+	<p style="color:black;font-family:Brush Script MT;font-size:50px;text-align: center;"><b>Results</b></p>
+	<div class="results">
+
+
+</body>
+		
+	{% if prediction == 1%}
+        
+	<body class="spam"></body>
+       
+	{% elif prediction == 0%}
+	<body class="notspam"><h2 style="color:green;">Not Spam (Ham)</h2></body>
+	{% endif %}
+
+	</div>
+
+
+</html>

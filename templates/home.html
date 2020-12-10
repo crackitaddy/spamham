@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  background-image: url("{{url_for('static', filename='spam 4.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black;
+  text-align: center;
+}
+
+#brandname{
+color: black;
+font-family: Brush Script MT;
+font-size: 500%;
+text-align: center;
+}
+.ml-container{
+text-align: center;
+}
+textarea{
+background: transparent;
+color: black;
+border:solid 3px black;
+}
+.btn-info{
+background: transparent;
+transition-duration:0.4s;
+font-weight:bold;
+}
+.btn-info:hover{
+background-color:white;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+cursor:pointer;
+}
+</style>
+<head>
+	<title>Home</title>
+	
+</head>
+<body >
+
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			The Spam/Ham Detector
+		</div>
+		
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p><b>Enter Your Message Here</b></p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="6" cols="50"></textarea>
+		<br/>
+
+		<input type="submit" class="btn-info" value="PREDICT">
+		
+	</form>
+		
+	</div>
+
+	
+	
+
+</body>
+</html>
